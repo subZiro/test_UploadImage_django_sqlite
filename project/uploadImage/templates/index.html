@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block title %}
+    <title>Главная</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for object in object_list %}
+                {% cache 500 images object.hash %}
+                    <div class="col-md-2 col-sm-4 col-xs-6 thumb">
+                        <a class="fancyimage" rel="group" href="{% url 'view' object.hash %}">
+                            <img class="img-thumbnail img-fluid img-responsive" src="{% get_media_prefix %}{{ object.img }}" />
+                        </a>
+                    </div>
+                {% endcache %}
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <div>
+        <!--PAGINATION-->
+        {% if paginator %}
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="/?page={{ page_obj.previous_page_number }}"><<</a>
+                        </li>
+                    {% endif %}
+
+                    {% for i in page_obj.paginator.page_range %}
+                        {% if page_obj.number == i %}
+                            <li class="page-item active"><a class="page-link" href="">{{ i }}</a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="/?page={{ page_obj.next_page_number }}">>></a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+{% endblock %}

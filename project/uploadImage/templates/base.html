@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    {% block title %}
+        <!--blockhead-->
+    {% endblock %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+
+<body style="padding-top: 5rem;">
+    <!--menu head-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="navbar-brand" href="{% url 'index' %}">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-brand" href="{% url 'upload' %}">Загрузить файл</a>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}
+        <!--contentblock-->
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Редактирование изображения</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% if context.e_message %}
+            <div class="row col-6">
+                <div class="alert alert-secondary">
+                    {{ context.e_message }}
+                </div>
+            </div>
+        {% endif %}
+        <div class="row col-6">
+            {% if context.ViewForm.errors %}
+                {% for error in context.ViewForm.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <form action="" method="GET">
+            <div class="row">
+                {% for field in context.ViewForm %}
+                    <div class="col-sm-3">
+                        {{ field.label }}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <div class="col-sm-2">
+                    <br>
+                    <input class="btn btn-success" type="submit" value="Редактировать">
+                </div>
+            </div>
+        </form>
+
+        <hr>
+        <hr>
+
+        <div class="row">
+            <span id="source" style="display:none">
+                data:image/png;base64,{{ context.image64 }}
+            </span>
+        </div>
+    </div>
+
+    <script>
+        var image = new Image();
+        image.src = document.getElementById('source').innerHTML;
+        document.body.appendChild(image);
+    </script>
+
+{% endblock %}
