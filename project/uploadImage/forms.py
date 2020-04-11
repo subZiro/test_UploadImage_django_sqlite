@@ -8,7 +8,7 @@ class UploadForm(forms.Form):
     """создание экз формы загрузки изображения"""
     img_name = forms.ImageField(label='Выберите картинку', required=False)
     img_url = forms.CharField(label='Вставьте url',
-                              widget=forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'link for image'}),
+                              widget=forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'ссылка на изображение'}),
                               required=False)
 
     def clean(self):
