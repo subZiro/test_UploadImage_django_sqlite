@@ -23,8 +23,9 @@
 
     </div>
     <div>
+
         <!--PAGINATION-->
-        {% if paginator %}
+        {% if paginator and page_obj.has_next or page_obj.has_previous %}
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
 
