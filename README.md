@@ -3,8 +3,7 @@ Imagehost django+sqlite
 
 
 
-
-## Installation
+## Installation with github
 
 clone:
 
@@ -33,14 +32,34 @@ cd project
 ```
 
 
-directery manage.py
+### run
 
 ```sh
 python manage.py runserver 5000
 ```
 
 
-open 127.0.0.1:5000 in browser
+### run with docker 
+
+create image:
+
+```sh
+docker build -t test_django
+```
+
+run image:
+
+```sh
+docker run --rm -d -p 5000:5000 --name test_django_d test
+```
+
+
+
+### open 127.0.0.1:5000 in browser
+
+
+
+
 
 
 ## Index page
