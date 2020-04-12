@@ -52,4 +52,4 @@ open 127.0.0.1:5000 in browser
 
 
 ## View page
-![update](https://github.com/subZiro/todo_list_flask_sqlite/blob/master/app/static/img/update%20task.jpg)
+![view](https://github.com/subZiro/test_UploadImage_django_sqlite/blob/master/view-edit.jpg)
