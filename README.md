@@ -4,38 +4,33 @@ Imagehost django+sqlite
 
 
 ## Installation with github
-
 clone:
-
 ```sh
 git clone https://github.com/subZiro/test_UploadImage_django_sqlite.git
 ```
 
 virtual env:
-
 ```sh
 python3 -m venv venv 
 source venv/bin/activate
 ```
 
 install requirements:
-
 ```sh
 pip3 install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
 directery manage.py
-
 ```sh
 cd project
 ```
 
  run
-
 ```sh
 python manage.py runserver 5000
 ```
+
 
 
 ### run with docker 
@@ -53,7 +48,7 @@ docker build -t test_django
 
 run image:
 ```sh
-docker run --rm -d -p 5000:5000 --name test_django_d test
+docker run -d -p 5000:5000 --name test_django_d test
 ```
 
 
