@@ -43,14 +43,14 @@ git clone https://github.com/subZiro/test_UploadImage_django_sqlite.git
 
 create image:
 ```sh
-docker build -t test_django /project
+cd project
+docker build -t test_django .
 ```
 
 run image:
 ```sh
 docker run -d -p 5000:5000 --name test_django_d test
 ```
-
 
 
 ### open 127.0.0.1:5000 in browser
