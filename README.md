@@ -31,8 +31,7 @@ directery manage.py
 cd project
 ```
 
-
-### run
+ run
 
 ```sh
 python manage.py runserver 5000
@@ -41,14 +40,18 @@ python manage.py runserver 5000
 
 ### run with docker 
 
-create image:
 
+clone:
+```sh
+git clone https://github.com/subZiro/test_UploadImage_django_sqlite.git
+```
+
+create image:
 ```sh
 docker build -t test_django
 ```
 
 run image:
-
 ```sh
 docker run --rm -d -p 5000:5000 --name test_django_d test
 ```
