@@ -1,7 +1,7 @@
 asgiref==3.2.7
 Django==3.0.5
 ImageHash==4.0
-Pillow==7.1.1
+Pillow==8.3.2
 python-memcached==1.59
 pytz==2019.3
 PyWavelets==1.1.1
